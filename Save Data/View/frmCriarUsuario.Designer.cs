@@ -24,121 +24,107 @@
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCriarUsuario));
-            this.btnRegistrar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtEmail = new ChreneLib.Controls.TextBoxes.CTextBox();
-            this.txtSenha = new ChreneLib.Controls.TextBoxes.CTextBox();
-            this.txtUsuario = new ChreneLib.Controls.TextBoxes.CTextBox();
-            this.lblMessage = new System.Windows.Forms.Label();
+            this.txtSenha = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.btnRegistrar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.txtEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtUsuario = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialDivider2 = new MaterialSkin.Controls.MaterialDivider();
+            this.lblMessage = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
-            // 
-            // btnRegistrar
-            // 
-            this.btnRegistrar.BackColor = System.Drawing.Color.Gray;
-            this.btnRegistrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegistrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistrar.Location = new System.Drawing.Point(12, 116);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(343, 30);
-            this.btnRegistrar.TabIndex = 0;
-            this.btnRegistrar.Text = "Registrar";
-            this.btnRegistrar.UseVisualStyleBackColor = false;
-            this.btnRegistrar.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Email:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Senha:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 71);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(133, 16);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Nome de Usuario:";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(69, 8);
-            this.txtEmail.Multiline = true;
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(286, 24);
-            this.txtEmail.TabIndex = 4;
-            this.txtEmail.WaterMark = "emailteste@gmail.com";
-            this.txtEmail.WaterMarkActiveForeColor = System.Drawing.Color.Gray;
-            this.txtEmail.WaterMarkFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.WaterMarkForeColor = System.Drawing.Color.Gray;
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(69, 37);
-            this.txtSenha.Multiline = true;
+            this.txtSenha.Depth = 0;
+            this.txtSenha.Hint = "Senha";
+            this.txtSenha.Location = new System.Drawing.Point(32, 149);
+            this.txtSenha.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.PasswordChar = '*';
-            this.txtSenha.Size = new System.Drawing.Size(286, 24);
-            this.txtSenha.TabIndex = 5;
-            this.txtSenha.WaterMark = "****************";
-            this.txtSenha.WaterMarkActiveForeColor = System.Drawing.Color.Gray;
-            this.txtSenha.WaterMarkFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.WaterMarkForeColor = System.Drawing.Color.Gray;
+            this.txtSenha.PasswordChar = '\0';
+            this.txtSenha.SelectedText = "";
+            this.txtSenha.SelectionLength = 0;
+            this.txtSenha.SelectionStart = 0;
+            this.txtSenha.Size = new System.Drawing.Size(314, 23);
+            this.txtSenha.TabIndex = 15;
+            this.txtSenha.UseSystemPasswordChar = false;
+            // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.Depth = 0;
+            this.btnRegistrar.Location = new System.Drawing.Point(260, 243);
+            this.btnRegistrar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Primary = true;
+            this.btnRegistrar.Size = new System.Drawing.Size(86, 33);
+            this.btnRegistrar.TabIndex = 14;
+            this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Depth = 0;
+            this.txtEmail.Hint = "Email";
+            this.txtEmail.Location = new System.Drawing.Point(32, 111);
+            this.txtEmail.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PasswordChar = '\0';
+            this.txtEmail.SelectedText = "";
+            this.txtEmail.SelectionLength = 0;
+            this.txtEmail.SelectionStart = 0;
+            this.txtEmail.Size = new System.Drawing.Size(314, 23);
+            this.txtEmail.TabIndex = 13;
+            this.txtEmail.UseSystemPasswordChar = false;
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(151, 67);
-            this.txtUsuario.Multiline = true;
+            this.txtUsuario.Depth = 0;
+            this.txtUsuario.Hint = "Usuario";
+            this.txtUsuario.Location = new System.Drawing.Point(32, 187);
+            this.txtUsuario.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(204, 24);
-            this.txtUsuario.TabIndex = 6;
-            this.txtUsuario.WaterMark = "teste123";
-            this.txtUsuario.WaterMarkActiveForeColor = System.Drawing.Color.Gray;
-            this.txtUsuario.WaterMarkFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.WaterMarkForeColor = System.Drawing.Color.Gray;
+            this.txtUsuario.PasswordChar = '\0';
+            this.txtUsuario.SelectedText = "";
+            this.txtUsuario.SelectionLength = 0;
+            this.txtUsuario.SelectionStart = 0;
+            this.txtUsuario.Size = new System.Drawing.Size(314, 23);
+            this.txtUsuario.TabIndex = 16;
+            this.txtUsuario.UseSystemPasswordChar = false;
+            // 
+            // materialDivider2
+            // 
+            this.materialDivider2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider2.Depth = 0;
+            this.materialDivider2.Location = new System.Drawing.Point(11, 282);
+            this.materialDivider2.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider2.Name = "materialDivider2";
+            this.materialDivider2.Size = new System.Drawing.Size(345, 2);
+            this.materialDivider2.TabIndex = 18;
             // 
             // lblMessage
             // 
-            this.lblMessage.AutoSize = true;
-            this.lblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMessage.Location = new System.Drawing.Point(12, 97);
+            this.lblMessage.BackColor = System.Drawing.Color.Transparent;
+            this.lblMessage.Depth = 0;
+            this.lblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblMessage.Location = new System.Drawing.Point(32, 294);
+            this.lblMessage.MouseState = MaterialSkin.MouseState.HOVER;
             this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(0, 16);
-            this.lblMessage.TabIndex = 7;
+            this.lblMessage.Size = new System.Drawing.Size(314, 20);
+            this.lblMessage.TabIndex = 19;
+            this.lblMessage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // frmCriarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(367, 155);
+            this.ClientSize = new System.Drawing.Size(367, 323);
             this.Controls.Add(this.lblMessage);
+            this.Controls.Add(this.materialDivider2);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.txtSenha);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRegistrar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Controls.Add(this.txtEmail);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "frmCriarUsuario";
@@ -146,19 +132,15 @@
             this.Text = "Registrar Usuario";
             this.Load += new System.EventHandler(this.frmCriarUsuario_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnRegistrar;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private ChreneLib.Controls.TextBoxes.CTextBox txtEmail;
-        private ChreneLib.Controls.TextBoxes.CTextBox txtSenha;
-        private ChreneLib.Controls.TextBoxes.CTextBox txtUsuario;
-        private System.Windows.Forms.Label lblMessage;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtSenha;
+        private MaterialSkin.Controls.MaterialRaisedButton btnRegistrar;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtEmail;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtUsuario;
+        private MaterialSkin.Controls.MaterialDivider materialDivider2;
+        private MaterialSkin.Controls.MaterialLabel lblMessage;
     }
 }

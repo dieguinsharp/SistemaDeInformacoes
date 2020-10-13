@@ -24,116 +24,109 @@
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.btnCadastro = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblMessage = new System.Windows.Forms.Label();
-            this.txtEmail = new ChreneLib.Controls.TextBoxes.CTextBox();
-            this.txtSenha = new ChreneLib.Controls.TextBoxes.CTextBox();
+            this.txtEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialRaisedButton1 = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.txtSenha = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
+            this.btnCadastro = new MaterialSkin.Controls.MaterialLabel();
+            this.lblMessage = new MaterialSkin.Controls.MaterialLabel();
             this.SuspendLayout();
-            // 
-            // btnLogin
-            // 
-            this.btnLogin.BackColor = System.Drawing.Color.Gray;
-            this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnLogin.Location = new System.Drawing.Point(15, 91);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(4);
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(279, 26);
-            this.btnLogin.TabIndex = 0;
-            this.btnLogin.Text = "Entrar";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // btnCadastro
-            // 
-            this.btnCadastro.BackColor = System.Drawing.Color.Gray;
-            this.btnCadastro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastro.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnCadastro.Location = new System.Drawing.Point(15, 124);
-            this.btnCadastro.Margin = new System.Windows.Forms.Padding(4);
-            this.btnCadastro.Name = "btnCadastro";
-            this.btnCadastro.Size = new System.Drawing.Size(279, 26);
-            this.btnCadastro.TabIndex = 1;
-            this.btnCadastro.Text = "Cadastrar";
-            this.btnCadastro.UseVisualStyleBackColor = false;
-            this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 22);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 16);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Email:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 49);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 16);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Senha:";
-            // 
-            // lblMessage
-            // 
-            this.lblMessage.AutoSize = true;
-            this.lblMessage.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMessage.ForeColor = System.Drawing.Color.Red;
-            this.lblMessage.Location = new System.Drawing.Point(16, 71);
-            this.lblMessage.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblMessage.Name = "lblMessage";
-            this.lblMessage.Size = new System.Drawing.Size(0, 15);
-            this.lblMessage.TabIndex = 6;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(74, 19);
+            this.txtEmail.Depth = 0;
+            this.txtEmail.Hint = "Email";
+            this.txtEmail.Location = new System.Drawing.Point(23, 116);
+            this.txtEmail.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(219, 21);
-            this.txtEmail.TabIndex = 7;
-            this.txtEmail.WaterMark = "email@example.com";
-            this.txtEmail.WaterMarkActiveForeColor = System.Drawing.Color.Gray;
-            this.txtEmail.WaterMarkFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.WaterMarkForeColor = System.Drawing.Color.Gray;
+            this.txtEmail.PasswordChar = '\0';
+            this.txtEmail.SelectedText = "";
+            this.txtEmail.SelectionLength = 0;
+            this.txtEmail.SelectionStart = 0;
+            this.txtEmail.Size = new System.Drawing.Size(314, 23);
+            this.txtEmail.TabIndex = 9;
+            this.txtEmail.UseSystemPasswordChar = false;
+            // 
+            // materialRaisedButton1
+            // 
+            this.materialRaisedButton1.Depth = 0;
+            this.materialRaisedButton1.Location = new System.Drawing.Point(263, 207);
+            this.materialRaisedButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialRaisedButton1.Name = "materialRaisedButton1";
+            this.materialRaisedButton1.Primary = true;
+            this.materialRaisedButton1.Size = new System.Drawing.Size(74, 33);
+            this.materialRaisedButton1.TabIndex = 11;
+            this.materialRaisedButton1.Text = "Entrar";
+            this.materialRaisedButton1.UseVisualStyleBackColor = true;
+            this.materialRaisedButton1.Click += new System.EventHandler(this.materialRaisedButton1_Click);
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(74, 46);
+            this.txtSenha.Depth = 0;
+            this.txtSenha.Hint = "Senha";
+            this.txtSenha.Location = new System.Drawing.Point(23, 158);
+            this.txtSenha.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
-            this.txtSenha.Size = new System.Drawing.Size(219, 21);
-            this.txtSenha.TabIndex = 8;
-            this.txtSenha.WaterMark = "***************";
-            this.txtSenha.WaterMarkActiveForeColor = System.Drawing.Color.Gray;
-            this.txtSenha.WaterMarkFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSenha.WaterMarkForeColor = System.Drawing.Color.Gray;
+            this.txtSenha.SelectedText = "";
+            this.txtSenha.SelectionLength = 0;
+            this.txtSenha.SelectionStart = 0;
+            this.txtSenha.Size = new System.Drawing.Size(314, 23);
+            this.txtSenha.TabIndex = 12;
+            this.txtSenha.UseSystemPasswordChar = false;
+            // 
+            // materialDivider1
+            // 
+            this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider1.Depth = 0;
+            this.materialDivider1.Location = new System.Drawing.Point(12, 256);
+            this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider1.Name = "materialDivider1";
+            this.materialDivider1.Size = new System.Drawing.Size(338, 2);
+            this.materialDivider1.TabIndex = 14;
+            // 
+            // btnCadastro
+            // 
+            this.btnCadastro.BackColor = System.Drawing.Color.Transparent;
+            this.btnCadastro.Depth = 0;
+            this.btnCadastro.Font = new System.Drawing.Font("Roboto", 11F);
+            this.btnCadastro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.btnCadastro.Location = new System.Drawing.Point(19, 274);
+            this.btnCadastro.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnCadastro.Name = "btnCadastro";
+            this.btnCadastro.Size = new System.Drawing.Size(331, 28);
+            this.btnCadastro.TabIndex = 15;
+            this.btnCadastro.Text = "Registrar";
+            this.btnCadastro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnCadastro.Click += new System.EventHandler(this.btnCadastro_Click_1);
+            // 
+            // lblMessage
+            // 
+            this.lblMessage.BackColor = System.Drawing.Color.Transparent;
+            this.lblMessage.Depth = 0;
+            this.lblMessage.Font = new System.Drawing.Font("Roboto", 11F);
+            this.lblMessage.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblMessage.Location = new System.Drawing.Point(23, 184);
+            this.lblMessage.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblMessage.Name = "lblMessage";
+            this.lblMessage.Size = new System.Drawing.Size(314, 20);
+            this.lblMessage.TabIndex = 16;
+            this.lblMessage.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(311, 161);
-            this.Controls.Add(this.txtSenha);
-            this.Controls.Add(this.txtEmail);
+            this.ClientSize = new System.Drawing.Size(362, 317);
             this.Controls.Add(this.lblMessage);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCadastro);
-            this.Controls.Add(this.btnLogin);
+            this.Controls.Add(this.materialDivider1);
+            this.Controls.Add(this.txtSenha);
+            this.Controls.Add(this.materialRaisedButton1);
+            this.Controls.Add(this.txtEmail);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.ForeColor = System.Drawing.SystemColors.WindowFrame;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
@@ -143,19 +136,16 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmLogin_FormClosed);
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Button btnCadastro;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblMessage;
-        private ChreneLib.Controls.TextBoxes.CTextBox txtEmail;
-        private ChreneLib.Controls.TextBoxes.CTextBox txtSenha;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtEmail;
+        private MaterialSkin.Controls.MaterialRaisedButton materialRaisedButton1;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtSenha;
+        private MaterialSkin.Controls.MaterialDivider materialDivider1;
+        private MaterialSkin.Controls.MaterialLabel btnCadastro;
+        private MaterialSkin.Controls.MaterialLabel lblMessage;
     }
 }
 

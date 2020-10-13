@@ -9,9 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 using Save_Data.Validador;
+using MaterialSkin;
 
 namespace Save_Data {
-    public partial class frmPainel: Form {
+    public partial class frmPainel: MaterialSkin.Controls.MaterialForm
+    {
 
         private string _senhaAES;
 
@@ -23,6 +25,18 @@ namespace Save_Data {
 
         public frmPainel(string usuario, string email, int id) {
             InitializeComponent();
+
+            // Criando um material theme manager e adicionando o formulário
+            MaterialSkinManager materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+
+            // Definindo um esquema de Cor para formulário com tom Azul
+            materialSkinManager.ColorScheme = new ColorScheme(
+                Primary.Blue400, Primary.Blue500,
+                Primary.Blue500, Accent.Orange100,
+                TextShade.WHITE
+            );
 
             this._Myid = id;
 
@@ -131,59 +145,6 @@ namespace Save_Data {
             }
         }
 
-        // METODOS DE BOTÕES
-
-        // BOTÃO DE CARREGAR NOVAMENTE OS DADOS NA DATAGRID.
-
-        private void btnCarregarNovamente_Click(object sender, EventArgs e) {
-            CarregarDados();
-            ClearTXT();
-        }
-
-        // BOTÃO DE ATUALIZAR A LINHA SELECIONADA.
-
-        private void button2_Click(object sender, EventArgs e) {
-            try {
-                this.linha = dtvDados.CurrentRow.Index;
-                AtualizarLinha(this.linha);
-            } catch(NullReferenceException) {
-                MessageBox.Show("Selecione uma linha para atualizar!", "Banco", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }   
-        }
-
-        // INSERIR DADOS NA DATAGRID/BANCO.
-
-        private void button3_Click(object sender, EventArgs e) {
-
-            if(txtAnotacoes.Text != "" && txtCelular.Text != "" && txtEmail.Text != "" && txtSenha.Text != "") {
-                Modelo.Modelo modelo = new Modelo.Modelo();
-                modelo.email = txtEmail.Text;
-                modelo.senha = txtSenha.Text;
-                modelo.site = txtSite.Text;
-                modelo.celular = txtCelular.Text;
-                modelo.anotacoes = txtAnotacoes.Text;
-                modelo.id = this._Myid;
-
-                this.deuCerto = modelo.Inserir();
-
-                if(deuCerto) {
-
-                    CarregarDados();
-                    verde("Dados adicionados com sucesso!");
-                    ClearTXT();
-
-                } else {
-                    vermelho("Ouve um erro ao adicionar os dados.");
-                }
-            }else {
-                MessageBox.Show("Os dados devem conter pelo menos 1 caractere.");
-            } 
-        }
-
-        // PEGANDO A COLUNA DOS BOTÕES DE CRIPTOGRAFAR/DECRIPTOGRAFAR
-        // VERIFICANDO SE ELAS FORAM CLICK
-        // PEGANDO O INDEX DA LINHA E CRIPTOGRAFANDO
-
         private void dtvDados_CellContentClick(object sender, DataGridViewCellEventArgs e) {
             if(e.ColumnIndex == 6) {
 
@@ -268,53 +229,94 @@ namespace Save_Data {
         // FECHANDO A FORM DEPOIS DO X OU CTRL + F4.
 
         private void frmPainel_FormClosed(object sender, FormClosedEventArgs e) {
+            frmLogin newLogin = new frmLogin();
+            this.Hide();
+            newLogin.ShowDialog();
             Application.Exit();
         }
 
-        // BTÃO DE DELETAR OS DADOS SELECIONADOS.
+        private void btnCarregarNovamente_Click_1(object sender, EventArgs e)
+        {
+            CarregarDados();
+            ClearTXT();
+        }
 
-        private void btnDeletarDados_Click(object sender, EventArgs e) {
-
-            try {
+        private void btnDeletarDados_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
                 this.linha = dtvDados.CurrentRow.Index;
                 Modelo.Modelo modelo = new Modelo.Modelo();
 
                 modelo.id = Convert.ToInt32(dtvDados[0, linha].Value);
                 this.deuCerto = modelo.Remover();
 
-            } catch(NullReferenceException) {
+            }
+            catch (NullReferenceException)
+            {
                 MessageBox.Show("Selecione uma linha para deletar!", "Banco", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            } finally {
-                if(this.deuCerto) {
+            }
+            finally
+            {
+                if (this.deuCerto)
+                {
 
                     CarregarDados();
                     verde("Dados removidos com sucesso!");
                     ClearTXT();
 
-                } else {
+                }
+                else
+                {
                     vermelho("Ouve um erro ao remover os dados.");
                 }
-            }      
+            }
         }
 
-        private void txtSenha_TextChanged(object sender, EventArgs e) {
-
+        private void btAtualizarlinha_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                this.linha = dtvDados.CurrentRow.Index;
+                AtualizarLinha(this.linha);
+            }
+            catch (NullReferenceException)
+            {
+                MessageBox.Show("Selecione uma linha para atualizar!", "Banco", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void sairToolStripMenuItem_Click(object sender, EventArgs e) {
-            frmLogin newLogin = new frmLogin();
-            this.Hide();
-            newLogin.ShowDialog();
-        }
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+            if (txtAnotacoes.Text != "" && txtCelular.Text != "" && txtEmail.Text != "" && txtSenha.Text != "")
+            {
+                Modelo.Modelo modelo = new Modelo.Modelo();
+                modelo.email = txtEmail.Text;
+                modelo.senha = txtSenha.Text;
+                modelo.site = txtSite.Text;
+                modelo.celular = txtCelular.Text;
+                modelo.anotacoes = txtAnotacoes.Text;
+                modelo.id = this._Myid;
 
-        private void criadorToolStripMenuItem_Click(object sender, EventArgs e) {
-            System.Diagnostics.Process link = new System.Diagnostics.Process();
-            link.StartInfo = new System.Diagnostics.ProcessStartInfo(@"https://www.facebook.com/MWStek/");
-            link.Start();
-        }
+                this.deuCerto = modelo.Inserir();
 
-        private void btnInformacoes_Click(object sender, EventArgs e) {
+                if (deuCerto)
+                {
 
+                    CarregarDados();
+                    verde("Dados adicionados com sucesso!");
+                    ClearTXT();
+
+                }
+                else
+                {
+                    vermelho("Ouve um erro ao adicionar os dados.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Os dados devem conter pelo menos 1 caractere.");
+            }
         }
     }
 }
